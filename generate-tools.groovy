@@ -89,6 +89,9 @@ for(i in 0..10){
       bindings = new HashMap();
       bindings.put("groovyPath", config.groovyPath);
       bindings.put("serviceId", it.serviceId);
+      bindings.put("serviceType", it.serviceType);
+      bindings.put("serviceName", it.serviceName.replaceAll("<", "&lt;"));
+      bindings.put("serviceDescription", it.serviceDescription.replaceAll("<", "&lt;"));
       new File(targetToolsDir, "/${it.serviceId}.xml").write(
         jmte.transform(toolTempl, bindings),
         "UTF-8");
