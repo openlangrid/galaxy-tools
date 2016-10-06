@@ -1,0 +1,6 @@
+  <section id="${toolid}" name="${toolname}">
+    <tool file="${toolid}/merge.xml" />
+    ${foreach services s}
+    <tool file="${toolid}/${s.serviceId}.xml" />
+    ${end}
+  </section>
