@@ -1,4 +1,4 @@
-<tool id="LangridTranslation1" name="Langrid Translation" version="0.0.1">
+<tool id="${serviceId}" name="Langrid Translation" version="0.0.1">
   <description>Translate text using Language Grid</description>
   <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">Translation.groovy $sourceLang $targetLang "$input" ${serviceId}  > $out_file1</command>
     <inputs>
