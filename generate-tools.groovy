@@ -77,6 +77,10 @@ for(i in 0..10){
       if(t.exists()){
         toolTempl = t.getText("UTF-8");
         toolTempls.put(it.serviceType, toolTempl);
+        FileUtils.copyFile(
+          new File(templatesDir, "${it.serviceType}.groovy"),
+          new File(targetToolsDir, "${it.serviceType}.groovy"))
+        
       }
     }
     if(toolTempl == null){
