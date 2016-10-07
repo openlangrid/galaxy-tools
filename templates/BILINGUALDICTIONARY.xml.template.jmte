@@ -1,0 +1,13 @@
+<tool id="${serviceId}" name="${serviceId}(${serviceType})" version="0.0.1">
+  <description>${serviceName}: ${serviceDescription}</description>
+  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">BILINGUALDICTIONARY.groovy $sourceLang $targetLang "$input" $matchingMethod ${serviceId} > $out_file1</command>
+    <inputs>
+      <param format="txt" name="input" type="data" label="head words." help=""/>
+      <param type="text" name="sourceLang" value=""/>
+      <param type="text" name="targetLang" value=""/>
+      <param type="text" name="matchingMethod" value=""/>
+    </inputs>
+    <outputs>
+      <data format="tabular" name="out_file1" />
+    </outputs>
+</tool>
