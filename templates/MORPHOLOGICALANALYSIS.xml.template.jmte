@@ -1,0 +1,11 @@
+<tool id="${serviceId}" name="${serviceId}(${serviceType})" version="0.0.1">
+  <description>${serviceName}: ${serviceDescription}</description>
+  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">morphologicalanalysis.groovy $language "$input" ${serviceId} > $out_file1</command>
+    <inputs>
+      <param format="txt" name="input" type="data" label="Analysis text" help=""/>
+      <param type="text" name="language" value=""/>
+    </inputs>
+    <outputs>
+      <data format="tabular" name="out_file1" />
+    </outputs>
+</tool>

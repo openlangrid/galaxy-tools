@@ -71,6 +71,7 @@ for(i in 0..10){
     [new Order("gridId", "ASCENDANT"), new Order("serviceId", "ASCENDANT")] as Order[], "ALL");
   if(result.elements.length == 0) break;
   result.elements.each{
+    if(it.instanceType == "BPEL") return;
     toolTempl = toolTempls.get(it.serviceType);
     if(toolTempl == null){
       t = new File(templatesDir, it.serviceType + ".xml.template.jmte");
@@ -84,7 +85,7 @@ for(i in 0..10){
       }
     }
     if(toolTempl == null){
-      println "no tempaltes for ${it.serviceId}[${it.serviceType}]";
+      println "no tempaltes for ${it.serviceId}[${it.serviceType}]${it.instanceType}";
     } else{
       bindings = new HashMap();
       bindings.put("groovyPath", config.groovyPath);
@@ -112,4 +113,5 @@ println jmte.transform(
 	new File("templates/tool_config.xml.template.jmte").text,
 	bindings);
 println "-----";
+println "paste code above to tool_config.xml to enable services.";
 
