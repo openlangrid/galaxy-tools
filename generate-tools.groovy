@@ -68,7 +68,8 @@ def services = new ArrayList();
 def toolTempls = new HashMap();
 for(i in 0..10){
   result = client.searchServices(i * 100, 100, new MatchingCondition[0],
-    [new Order("gridId", "ASCENDANT"), new Order("serviceId", "ASCENDANT")] as Order[], "ALL");
+    [new Order("gridId", "ASCENDANT"), new Order("serviceId", "ASCENDANT")] as Order[],
+    "ACCESSIBLE");
   if(result.elements.length == 0) break;
   result.elements.each{
     if(it.instanceType == "BPEL") return;
