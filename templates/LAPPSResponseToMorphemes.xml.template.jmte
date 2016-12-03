@@ -1,4 +1,4 @@
-<tool id="LAPPSResponseToMorphemes" name="Text To LAPPS Request" version="0.0.1">
+<tool id="LAPPSResponseToMorphemes" name="LAPP Response To Morphemes" version="0.0.1">
   <description>Convert LAPPS Response file into Morphemes json</description>
   <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">LAPPSResponseToMorphemes.groovy "$input" > "$output"</command>
   <inputs>
