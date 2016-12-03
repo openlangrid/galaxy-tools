@@ -44,19 +44,24 @@ new File(targetToolsDir, "config.groovy").write(jmte.transform(
 	bindings
 	), "UTF-8");
 
-// generate merge.xml
-println "writing merge.xml..."
-bindings = new HashMap();
-bindings.put("groovyPath", config.groovyPath);
-new File(targetToolsDir, "/merge.xml").write(jmte.transform(
-	new File(templatesDir, "merge.xml.template.jmte").getText("UTF-8"),
-	bindings
-	), "UTF-8");
+// generate preset tools
+["merge", "TextToLAPPSRequest", "LAPPSResponseToMorphemes"].each{
+	// generate merge.xml
+	println "writing ${it}.xml..."
+	bindings = new HashMap();
+	bindings.put("groovyPath", config.groovyPath);
+	new File(targetToolsDir, "/${it}.xml").write(jmte.transform(
+		new File(templatesDir, "${it}.xml.template.jmte").getText("UTF-8"),
+		bindings
+		), "UTF-8");
+	
+	// generate merge.groovy
+	FileUtils.copyFile(
+		new File(templatesDir, "${it}.groovy"),
+		new File(targetToolsDir, "${it}.groovy"))
+	println it;
+}
 
-// generate merge.groovy
-FileUtils.copyFile(
-	new File(templatesDir, "merge.groovy"),
-	new File(targetToolsDir, "merge.groovy"))
 
 // generate each tools
 println "retrieving service list...";
