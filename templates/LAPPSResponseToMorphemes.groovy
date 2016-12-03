@@ -24,6 +24,7 @@ for(View v : res.getPayload().getViews()){
 		ret[i] = new Morpheme(word, word, PennTreebank.ptToLg(pos).getExpression());
 	}
 	print JSON.encode(ret);
+	return;
 }
 
 print "[]";
