@@ -45,7 +45,8 @@ new File(targetToolsDir, "config.groovy").write(jmte.transform(
 	), "UTF-8");
 
 // generate preset tools
-["merge", "TextToLAPPSRequest", "LAPPSResponseToMorphemes"].each{
+tools = ["merge", "TextToLAPPSRequest", "LAPPSResponseToMorphemes"];
+tools.each{
 	// generate merge.xml
 	println "writing ${it}.xml..."
 	bindings = new HashMap();
@@ -115,6 +116,7 @@ bindings = new HashMap();
 bindings.put("toolId", toolId);
 bindings.put("toolName", toolName);
 bindings.put("services", services);
+bindings.put("tools", tools);
 println jmte.transform(
 	new File("templates/tool_config.xml.template.jmte").text,
 	bindings);
