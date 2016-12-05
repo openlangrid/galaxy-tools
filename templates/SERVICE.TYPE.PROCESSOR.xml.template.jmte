@@ -1,8 +1,8 @@
-<tool id="${serviceId}" name="${serviceId}(${serviceType})" version="0.0.1">
-  <description>${serviceName}: ${serviceDescription}</description>
+<tool id="${serviceId}" name="${serviceId}" version="0.0.1">
+  <description>${serviceName}(${serviceType}): ${serviceDescription}</description>
   <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">SERVICE.TYPE.PROCESSOR.groovy ${serviceId} "$input" > $out_file1</command>
     <inputs>
-      <param format="txt" name="input" type="data" label="" help=""/>
+      <param format="txt" name="input" type="data" help=""/>
     </inputs>
     <outputs>
       <data format="txt" name="out_file1" />

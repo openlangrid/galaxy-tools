@@ -2,7 +2,7 @@
   <description>Convert LAPPS Response file into Morphemes json</description>
   <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">LAPPSResponseToMorphemes.groovy "$input" > "$output"</command>
   <inputs>
-    <param format="txt" name="input" type="data" label="input"/>
+    <param format="txt" name="input" type="data" />
   </inputs>
   <outputs>
     <data format="txt" name="output" />

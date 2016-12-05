@@ -1,9 +1,9 @@
-<tool id="${serviceId}" name="${serviceId}(${serviceType})" version="0.0.1">
-  <description>${serviceName}: ${serviceDescription}</description>
+<tool id="${serviceId}" name="${serviceId}" version="0.0.1">
+  <description>${serviceName}(${serviceType}): ${serviceDescription}</description>
   <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">MORPHOLOGICALANALYSIS.groovy ${serviceId} $language "$input" > $output</command>
     <inputs>
       <param type="text" name="language" value=""/>
-      <param format="txt" name="input" type="data" label="Analysis text" help=""/>
+      <param format="txt" name="input" type="data" help=""/>
     </inputs>
     <outputs>
       <data format="txt" name="output" />

@@ -1,11 +1,11 @@
-<tool id="${serviceId}" name="${serviceId}(${serviceType})" version="0.0.1">
-  <description>${serviceName}: ${serviceDescription}</description>
-  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}"TargetWordReplacer.groovy $language "$transresults" "$codes" "$targetWords" > "$translations"</command>
+<tool id="TargetWordReplacer" name="TargetWordReplacer" version="0.0.1">
+  <description>TargetWordReplacer</description>
+  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">TargetWordReplacer.groovy $language "$transresults" "$codes" "$targetWords" > "$translations"</command>
     <inputs>
       <param type="text" name="language" value=""/>
-      <param format="txt" name="transresults" type="data" label="head words." help=""/>
-      <param format="txt" name="codes" type="data" label="head words." help=""/>
-      <param format="txt" name="targetWords" type="data" label="head words." help=""/>
+      <param format="txt" name="transresults" type="data" help=""/>
+      <param format="txt" name="codes" type="data" help=""/>
+      <param format="txt" name="targetWords" type="data" help=""/>
     </inputs>
     <outputs>
       <data format="txt" name="translations" />

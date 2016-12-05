@@ -1,4 +1,4 @@
-<tool id="${serviceId}" name="${serviceId}(${serviceType})" version="0.0.1">
+<tool id="${serviceId}" name="${serviceId}" version="0.0.1">
   <description>${serviceName}: ${serviceDescription}</description>
   <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">BILINGUALDICTIONARYWITHLONGESTMATCHSEARCH.groovy ${serviceId} "$input" $sourceLang $targetLang > $output</command>
     <inputs>

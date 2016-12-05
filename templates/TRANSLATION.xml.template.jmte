@@ -1,5 +1,5 @@
-<tool id="${serviceId}" name="${serviceId}(${serviceType})" version="0.0.1">
-  <description>${serviceName}: ${serviceDescription}</description>
+<tool id="${serviceId}" name="${serviceId}" version="0.0.1">
+  <description>${serviceName}(${serviceType}): ${serviceDescription}</description>
   <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">TRANSLATION.groovy ${serviceId} $additionalUrlParam $sourceLang $targetLang "$input"  > $out_file1</command>
     <inputs>
       <param format="txt" name="input" type="data" label="Translate text" help="Dataset missing? See TIP below"/>
@@ -8,6 +8,6 @@
       <param type="text" name="targetLang" value=""/>
     </inputs>
     <outputs>
-      <data format="tabular" name="out_file1" />
+      <data format="txt" name="out_file1" />
     </outputs>
 </tool>
