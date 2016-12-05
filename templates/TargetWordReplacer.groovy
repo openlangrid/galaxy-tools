@@ -23,4 +23,5 @@ transresults.each{
 		JSON.decode(codes[i], String[].class),
 		JSON.decode(words[i], String[].class)
 		);
+	i++;
 }

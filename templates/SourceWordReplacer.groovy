@@ -14,6 +14,11 @@ m = new File(args[4]);
 c = new File(args[5]);
 w = new File(args[6]);
 
+s.write("");
+m.write("");
+c.write("");
+w.write("");
+
 csmc = new ConstructSourceAndMorphemesAndCodes();
 
 i = 0;
@@ -25,8 +30,8 @@ morphs.each{
 	morphs = JSON.decode(it, Morpheme[].class);
 	translations = JSON.decode(trans[i++], TranslationWithPosition[].class);
 	ret = csmc.constructSMC(lang, morphs, translations);
-	s.write(ret.getSource() + "\n", "UTF-8");
-	m.write(JSON.encode(ret.getMorphemes()) + "\n", "UTF-8");
-	c.write(JSON.encode(ret.getCodes()) + "\n", "UTF-8");
-	w.write(JSON.encode(ret.getTargetWords()) + "\n", "UTF-8");
+	s.append(ret.getSource() + "\n", "UTF-8");
+	m.append(JSON.encode(ret.getMorphemes()) + "\n", "UTF-8");
+	c.append(JSON.encode(ret.getCodes()) + "\n", "UTF-8");
+	w.append(JSON.encode(ret.getTargetWords()) + "\n", "UTF-8");
 }
