@@ -1,10 +1,10 @@
 <tool id="${serviceId}" name="${serviceId}" version="0.0.1">
   <description>${serviceName}(${serviceType}): ${serviceDescription}</description>
-  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">SERVICE.TYPE.PROCESSOR.groovy ${serviceId} "$input" > $out_file1</command>
+  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">SERVICE.TYPE.PROCESSOR.groovy ${serviceId} "$request" > $response</command>
     <inputs>
-      <param format="txt" name="input" type="data" label="request" help=""/>
+      <param format="txt" name="request" type="data" />
     </inputs>
     <outputs>
-      <data format="txt" name="out_file1" label="response"/>
+      <data format="txt" name="response" />
     </outputs>
 </tool>
