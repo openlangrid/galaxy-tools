@@ -1,0 +1,15 @@
+<tool id="${serviceId}" name="${serviceId}(${serviceType})" version="0.0.1">
+  <description>${serviceName}: ${serviceDescription}</description>
+  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">SourceWordReplacer.groovy $sourceLang "$morphemes" "$translations" "$replacedSources" "$replacedMorphemes" "$codes" "$targetCodes"</command>
+    <inputs>
+      <param type="text" name="sourceLang" value=""/>
+      <param format="txt" name="morphemes" type="data" label="head words." help=""/>
+      <param format="txt" name="translations" type="data" label="head words." help=""/>
+    </inputs>
+    <outputs>
+      <data format="txt" name="replacedSources" />
+      <data format="txt" name="replacedMorphemes" />
+      <data format="txt" name="codes" />
+      <data format="txt" name="targetWords" />
+    </outputs>
+</tool>

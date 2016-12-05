@@ -45,7 +45,8 @@ new File(targetToolsDir, "config.groovy").write(jmte.transform(
 	), "UTF-8");
 
 // generate preset tools
-tools = ["merge", "TextToLAPPSRequest", "LAPPSResponseToMorphemes"];
+tools = ["merge", "TextToLAPPSRequest", "LAPPSResponseToMorphemes",
+	"SourceWordReplacer", "TargetWordReplacer"];
 tools.each{
 	// generate merge.xml
 	println "writing ${it}.xml..."

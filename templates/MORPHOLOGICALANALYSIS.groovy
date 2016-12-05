@@ -5,14 +5,19 @@ import jp.go.nict.langrid.client.soap.SoapClientFactory;
 import jp.go.nict.langrid.service_1_2.morphologicalanalysis.MorphologicalAnalysisService;
 import net.arnx.jsonic.JSON;
 
-config = new ConfigSlurper().parse(new File(
-  new File(this.class.protectionDomain.codeSource.location.path).parentFile, 'config.groovy').toURL())
-client = new SoapClientFactory().create(
-  MorphologicalAnalysisService.class,
-  new URL(config.langrid.invokerUrl + args[2]),
-  config.langrid.id,
-  config.langrid.password)
+serviceId = args[0];
+language = args[1];
+sources = new File(args[2]).readLines("UTF-8");
 
-new File(args[1]).eachLine{
-  println JSON.encode(client.analyze(args[0], it));
+config = new ConfigSlurper().parse(new File(
+	new File(this.class.protectionDomain.codeSource.location.path).parentFile, 'config.groovy').toURL())
+
+client = new SoapClientFactory().create(
+	MorphologicalAnalysisService.class,
+	new URL(config.langrid.invokerUrl + serviceId),
+	config.langrid.id,
+	config.langrid.password)
+
+sources.each{
+	println JSON.encode(client.analyze(language, it));
 }

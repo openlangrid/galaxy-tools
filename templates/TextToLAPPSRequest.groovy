@@ -4,7 +4,9 @@
 import net.arnx.jsonic.JSON;
 import org.langrid.service.api.lapps_nlp.Request;
 
-print JSON.encode(new Request(
-					"http://vocab.lappsgrid.org/ns/media/text",
-					new File(args[0]).text
-					));
+new File(args[0]).eachLine{
+	println JSON.encode(new Request(
+			"http://vocab.lappsgrid.org/ns/media/text",
+			it
+			));
+}
