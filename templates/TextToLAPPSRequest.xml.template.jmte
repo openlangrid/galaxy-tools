@@ -2,9 +2,9 @@
   <description>Convert text file into LAPPS style json input</description>
   <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">TextToLAPPSRequest.groovy "$input" > "$output"</command>
   <inputs>
-    <param format="txt" name="input" type="data"/>
+    <param format="txt" name="input" type="data" label="texts" />
   </inputs>
   <outputs>
-    <data format="txt" name="output" />
+    <data format="txt" name="output" label="lappsRequests" />
   </outputs>
 </tool>

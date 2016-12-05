@@ -2,12 +2,12 @@
   <description>TargetWordReplacer</description>
   <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">TargetWordReplacer.groovy $language "$transresults" "$codes" "$targetWords" > "$translations"</command>
     <inputs>
-      <param type="text" name="language" value=""/>
-      <param format="txt" name="transresults" type="data" help=""/>
-      <param format="txt" name="codes" type="data" help=""/>
-      <param format="txt" name="targetWords" type="data" help=""/>
+      <param type="text" name="language" label="targetLang" value=""/>
+      <param type="data" format="txt" name="transresults" label="targetTexts" />
+      <param type="data" format="txt" name="codes" />
+      <param type="data" format="txt" name="targetWords" />
     </inputs>
     <outputs>
-      <data format="txt" name="translations" />
+      <data format="txt" name="translations" label="replacedTexts" />
     </outputs>
 </tool>

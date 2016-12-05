@@ -2,12 +2,12 @@
   <description>${serviceName}(${serviceType}): ${serviceDescription}</description>
   <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">TRANSLATION.groovy ${serviceId} $additionalUrlParam $sourceLang $targetLang "$input"  > $out_file1</command>
     <inputs>
-      <param format="txt" name="input" type="data" label="Translate text" help="Dataset missing? See TIP below"/>
+      <param format="txt" name="input" type="data" label="sourceTexts" />
       <param type="text" name="additionalUrlParam" value=""/>
       <param type="text" name="sourceLang" value=""/>
       <param type="text" name="targetLang" value=""/>
     </inputs>
     <outputs>
-      <data format="txt" name="out_file1" />
+      <data format="txt" name="out_file1" label="targetTexts" />
     </outputs>
 </tool>

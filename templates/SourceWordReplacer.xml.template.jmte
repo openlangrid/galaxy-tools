@@ -3,8 +3,8 @@
   <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">SourceWordReplacer.groovy $sourceLang "$morphemes" "$translations" "$replacedSources" "$replacedMorphemes" "$codes" "$targetWords"</command>
     <inputs>
       <param type="text" name="sourceLang" value=""/>
-      <param format="txt" name="morphemes" type="data" help=""/>
-      <param format="txt" name="translations" type="data" help=""/>
+      <param type="data" format="txt" name="morphemes" />
+      <param type="data" format="txt" name="translations" />
     </inputs>
     <outputs>
       <data format="txt" name="replacedSources" />

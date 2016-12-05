@@ -2,9 +2,9 @@
   <description>${serviceName}(${serviceType}): ${serviceDescription}</description>
   <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">SERVICE.TYPE.DATASOURCE.groovy ${serviceId} "$input" > $out_file1</command>
     <inputs>
-      <param format="txt" name="input" type="data" help=""/>
+      <param format="txt" name="input" type="data" label="request" help=""/>
     </inputs>
     <outputs>
-      <data format="txt" name="out_file1" />
+      <data format="txt" name="out_file1" label="response" />
     </outputs>
 </tool>

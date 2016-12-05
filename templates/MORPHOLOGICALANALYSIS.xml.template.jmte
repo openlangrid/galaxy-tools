@@ -3,9 +3,9 @@
   <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">MORPHOLOGICALANALYSIS.groovy ${serviceId} $language "$input" > $output</command>
     <inputs>
       <param type="text" name="language" value=""/>
-      <param format="txt" name="input" type="data" help=""/>
+      <param type="data" format="txt" name="input" label="texts"/>
     </inputs>
     <outputs>
-      <data format="txt" name="output" />
+      <data format="txt" name="output" label="morphemes" />
     </outputs>
 </tool>
