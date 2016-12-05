@@ -1,6 +1,6 @@
 <tool id="SourceWordReplacer" name="SourceWordReplacer" version="0.0.1">
   <description>SourceWordReplacer</description>
-  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">SourceWordReplacer.groovy $sourceLang "$morphemes" "$translations" "$replacedSources" "$replacedMorphemes" "$codes" "$targetCodes"</command>
+  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">SourceWordReplacer.groovy $sourceLang "$morphemes" "$translations" "$replacedSources" "$replacedMorphemes" "$codes" "$targetWords"</command>
     <inputs>
       <param type="text" name="sourceLang" value=""/>
       <param format="txt" name="morphemes" type="data" help=""/>
