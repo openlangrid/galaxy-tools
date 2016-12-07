@@ -12,6 +12,10 @@ import com.floreysoft.jmte.Engine;
 import org.apache.commons.io.FileUtils
 
 
+tools = ["merge", "TextToLIF", "LIFToMorphemes",
+	"SourceWordReplacer", "TargetWordReplacer"];
+
+
 if(args.length != 5){
   println "[usage] groovy generate-tools.groovy targetDir toolId toolName serviceGridUrl serviceGridUserId";
   return
@@ -45,8 +49,6 @@ new File(targetToolsDir, "config.groovy").write(jmte.transform(
 	), "UTF-8");
 
 // generate preset tools
-tools = ["merge", "TextToLAPPSRequest", "LAPPSResponseToMorphemes",
-	"SourceWordReplacer", "TargetWordReplacer"];
 tools.each{
 	// generate merge.xml
 	println "writing ${it}.xml..."

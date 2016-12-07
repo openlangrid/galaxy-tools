@@ -1,8 +1,8 @@
 <tool id="LAPPSResponseToMorphemes" name="LAPP Response To Morphemes" version="0.0.1">
   <description>Convert LAPPS Response file into Morphemes json</description>
-  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">LAPPSResponseToMorphemes.groovy "$input" > "$morphemes"</command>
+  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">LAPPSResponseToMorphemes.groovy "$LIF" > "$morphemes"</command>
   <inputs>
-    <param format="txt" name="input" type="data" label="lappsResponses" />
+    <param format="txt" name="LIF" type="data" />
   </inputs>
   <outputs>
     <data format="txt" name="morphemes" />

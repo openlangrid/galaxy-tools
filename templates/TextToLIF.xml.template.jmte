@@ -1,10 +1,10 @@
 <tool id="TextToLAPPSRequest" name="Text To LAPPS Request" version="0.0.1">
   <description>Convert text file into LAPPS style json input</description>
-  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">TextToLAPPSRequest.groovy "$texts" > "$lappsRequests"</command>
+  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">TextToLAPPSRequest.groovy "$texts" > "$LIF"</command>
   <inputs>
     <param format="txt" name="texts" type="data" />
   </inputs>
   <outputs>
-    <data format="txt" name="lappsRequests" />
+    <data format="txt" name="LIF" />
   </outputs>
 </tool>
