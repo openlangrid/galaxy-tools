@@ -1,6 +1,6 @@
-<tool id="LAPPSResponseToMorphemes" name="LAPP Response To Morphemes" version="0.0.1">
-  <description>Convert LAPPS Response file into Morphemes json</description>
-  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">LAPPSResponseToMorphemes.groovy "$LIF" > "$morphemes"</command>
+<tool id="LIFToMorphemes" name="LIF To Morphemes" version="0.0.1">
+  <description>Convert LIF data into Morphemes</description>
+  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">LIFToMorphemes.groovy "$LIF" > "$morphemes"</command>
   <inputs>
     <param format="txt" name="LIF" type="data" />
   </inputs>
