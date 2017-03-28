@@ -3,21 +3,22 @@
 import jp.go.nict.langrid.client.soap.SoapClientFactory;
 import jp.go.nict.langrid.service_1_2.translation.TranslationService;
 
-serviceId = args[0];
-additionalUrlParam = args[1];
-sourceLang = args[2];
-targetLang = args[3];
-sourceFile = args[4];
+userEmail = args[0];
+serviceId = args[1];
+additionalUrlParam = args[2];
+sourceLang = args[3];
+targetLang = args[4];
+sources = args[5];
 
 config = new ConfigSlurper().parse(new File(
-	new File(this.class.protectionDomain.codeSource.location.path).parentFile, 'config.groovy').toURL())
+	new File(this.class.protectionDomain.codeSource.location.path).parentFile,
+	'config.groovy').toURL());
 
 client = new SoapClientFactory().create(
 	TranslationService.class,
 	new URL(config.langrid.invokerUrl + serviceId + additionalUrlParam),
-	config.langrid.id,
-	config.langrid.password)
+	config.langrid.appAuthKey, userEmail);
 
-new File(sourceFile).eachLine{
+new File(sources).eachLine("UTF-8"){
 	println client.translate(sourceLang, targetLang, it);
 }

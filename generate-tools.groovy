@@ -1,7 +1,7 @@
 /*
 */
-@Grab('org.langrid:jp.go.nict.langrid.client.soap:1.0.7')
-@Grab('org.langrid:jp.go.nict.langrid.service.management_1_2:1.0.7')
+@Grab('org.langrid:jp.go.nict.langrid.client.soap:1.0.10')
+@Grab('org.langrid:jp.go.nict.langrid.service.management_1_2:1.0.10')
 @Grab('com.floreysoft:jmte:3.1.1')
 @Grab(group='commons-io', module='commons-io', version='2.4')
 import jp.go.nict.langrid.client.soap.SoapClientFactory;
@@ -16,8 +16,8 @@ tools = ["merge", "TextToLIF", "LIFToMorphemes",
 	"SourceWordReplacer", "TargetWordReplacer"];
 
 
-if(args.length != 5){
-  println "[usage] groovy generate-tools.groovy targetDir toolId toolName serviceGridUrl serviceGridUserId";
+if(args.length != 6){
+  println "[usage] groovy generate-tools.groovy targetDir toolId toolName serviceGridUrl serviceGridAppAuthKey serviceGridUserId";
   return
 }
 print "Password: "
@@ -25,7 +25,8 @@ def targetDir = args[0]
 def toolId = args[1]
 def toolName = args[2]
 def serviceGridUrl = args[3]
-def serviceGridUserId = args[4]
+def serviceGridAppAuthKey = args[4]
+def serviceGridUserId = args[5]
 def serviceGridPassword = new BufferedReader(new InputStreamReader(System.in)).readLine()
 println "";
 
@@ -41,8 +42,7 @@ Engine jmte = Engine.createNonCachingEngine()
 println "writing config.groovy..."
 def bindings = new HashMap();
 bindings.put("serviceGridUrl", serviceGridUrl);
-bindings.put("serviceGridUserId", serviceGridUserId);
-bindings.put("serviceGridPassword", serviceGridPassword);
+bindings.put("serviceGridAppAuthKey", serviceGridAppAuthKey);
 new File(targetToolsDir, "config.groovy").write(jmte.transform(
 	new File(templatesDir, "config.groovy.template.jmte").getText("UTF-8"),
 	bindings

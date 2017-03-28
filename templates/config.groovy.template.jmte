@@ -1,3 +1,2 @@
 langrid.invokerUrl = "${serviceGridUrl}invoker/"
-langrid.id = "${serviceGridUserId}"
-langrid.password = "${serviceGridPassword}"
+langrid.appAuthKey = "${serviceGridAppAuthKey}"

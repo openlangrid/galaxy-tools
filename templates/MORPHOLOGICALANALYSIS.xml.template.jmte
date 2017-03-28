@@ -1,9 +1,9 @@
 <tool id="${serviceId}" name="${serviceId}" version="0.0.1">
   <description>${serviceName}(${serviceType}): ${serviceDescription}</description>
-  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">MORPHOLOGICALANALYSIS.groovy ${serviceId} $language "$input" > $morphemes</command>
+  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">MORPHOLOGICALANALYSIS.groovy $__user_email__ ${serviceId} $additionalUrlParam $language "$text" > $morphemes</command>
     <inputs>
       <param type="text" name="language" value=""/>
-      <param type="data" format="txt" name="input" label="texts"/>
+      <param type="data" name="text" format="txt" label="texts"/>
     </inputs>
     <outputs>
       <data format="txt" name="morphemes" />

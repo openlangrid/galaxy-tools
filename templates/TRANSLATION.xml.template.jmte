@@ -1,13 +1,13 @@
 <tool id="${serviceId}" name="${serviceId}" version="0.0.1">
   <description>${serviceName}(${serviceType}): ${serviceDescription}</description>
-  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">TRANSLATION.groovy ${serviceId} $additionalUrlParam $sourceLang $targetLang "$input"  > $targetTexts</command>
+  <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">TRANSLATION.groovy $__user_email__ ${serviceId} $additionalUrlParam $sourceLang $targetLang "$sources"  > $translations</command>
     <inputs>
-      <param format="txt" name="input" type="data" label="sourceTexts" />
-      <param type="text" name="additionalUrlParam" value=""/>
-      <param type="text" name="sourceLang" value=""/>
-      <param type="text" name="targetLang" value=""/>
+      <param name="sources" type="data" format="txt" label="sourceTexts" />
+      <param name="additionalUrlParam" type="text" value=""/>
+      <param name="sourceLang" type="text" value=""/>
+      <param name="targetLang" type="text" value=""/>
     </inputs>
     <outputs>
-      <data format="txt" name="targetTexts" />
+      <data name="translations" format="txt" />
     </outputs>
 </tool>
