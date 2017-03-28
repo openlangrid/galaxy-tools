@@ -2,10 +2,10 @@
   <description>${serviceName}(${serviceType}): ${serviceDescription}</description>
   <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">TRANSLATION.groovy $__user_email__ ${serviceId} $additionalUrlParam $sourceLang $targetLang "$sources"  > $translations</command>
     <inputs>
-      <param name="sources" type="data" format="txt" label="sourceTexts" />
       <param name="additionalUrlParam" type="text" value=""/>
       <param name="sourceLang" type="text" value=""/>
       <param name="targetLang" type="text" value=""/>
+      <param name="sources" type="data" format="txt" label="sourceTexts" />
     </inputs>
     <outputs>
       <data name="translations" format="txt" />

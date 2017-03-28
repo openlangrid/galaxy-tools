@@ -2,11 +2,12 @@
   <description>${serviceName}(${serviceType}): ${serviceDescription}</description>
   <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">BILINGUALDICTIONARYWITHLONGESTMATCHSEARCH.groovy $__user_email__ ${serviceId} $additionalUrlParam $sourceLang $targetLang "$morphemes" > $translations</command>
     <inputs>
-      <param format="txt" name="morphemes" type="data" help=""/>
-      <param type="text" name="sourceLang" value=""/>
-      <param type="text" name="targetLang" value=""/>
+      <param name="additionalUrlParam" type="text" value=""/>
+      <param name="sourceLang" type="text" value=""/>
+      <param name="targetLang" type="text" value=""/>
+      <param name="morphemes" type="data" format="txt" help=""/>
     </inputs>
     <outputs>
-      <data format="txt" name="translations" />
+      <data name="translations" format="txt" />
     </outputs>
 </tool>

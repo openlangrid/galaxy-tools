@@ -2,13 +2,13 @@
   <description>${serviceName}(${serviceType}): ${serviceDescription}</description>
   <command interpreter="JAVA_OPTS=-Dfile.encoding=UTF-8 ${groovyPath}">BILINGUALDICTIONARY.groovy $__user_email__ ${serviceId} $additionalUrlParam $sourceLang $targetLang "$headWords" $matchingMethod > $translations</command>
     <inputs>
-      <param format="txt" name="headWords" type="data" label="head words." help=""/>
-      <param type="text" name="additionalUrlParam" value=""/>
-      <param type="text" name="sourceLang" value=""/>
-      <param type="text" name="targetLang" value=""/>
-      <param type="text" name="matchingMethod" value=""/>
+      <param name="additionalUrlParam" type="text" value=""/>
+      <param name="sourceLang" type="text" value=""/>
+      <param name="targetLang" type="text" value=""/>
+      <param name="headWords" type="data" format="txt" label="head words." help=""/>
+      <param name="matchingMethod" type="text" value=""/>
     </inputs>
     <outputs>
-      <data format="tabular" name="translations" />
+      <data name="translations" format="txt" />
     </outputs>
 </tool>
